@@ -1,0 +1,26 @@
+#!/bin/bash
+v=$1
+if [ -z "$1" ]; then
+	v=5
+fi;
+
+declare -i val=$v
+
+#check if number
+re='[0-9]+$'
+
+if ![[ $1 =~ $re ]]; then
+	echo "Add Number as parameter!"
+	exit 1;
+fi;
+
+clear
+
+while true
+do
+	date
+	echo "Update timer in sec:"$v" ---------------"
+	sensors
+	sleep $val
+	clear
+done

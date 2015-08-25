@@ -1,0 +1,7 @@
+#!/bin/bash
+START=1
+END=$1
+for (( c=$START; c<=$END; c++))
+do
+	cd ..
+done
