@@ -1,0 +1,4 @@
+total=$(awk '/^Mem/ {print $2}' <(free -m))
+used=$(awk '/^Mem/ {print $3}' <(free -m))
+percent=$((200*$used/$total % 2 + 100*$used/$total))
+echo "$percent % free ram"
