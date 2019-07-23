@@ -1,0 +1,4 @@
+percent=$(awk '/^/ {print $5}' <(df -h $PWD |tail -n 1))
+percent=${percent%?}
+percent=$((100-$percent))
+echo "$percent % free storage"
